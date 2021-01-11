@@ -1,0 +1,42 @@
+body{
+  background-color: black;
+}
+nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 150px;
+  background-color: rgba(255, 0, 0, 0);
+  width: 100%;
+  top: -2%;
+}
+.logo {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.menu ul li {
+  display: inline-block;
+  padding: 0px 30px;
+  text-transform: capitalize;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+nav a{
+  text-decoration: none;
+  color: white;
+}
+nav h1{
+  font-size: 1.6em;
+}
+
+.presentation{
+  height: 100vh;
+}
