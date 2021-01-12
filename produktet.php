@@ -27,13 +27,13 @@
 
   <div class="menu">
     <ul>
-      <li><a href="index.html">home</a></li>
-      <li><a href="produktet.html">Products</a></li>
-      <li><a href="360.html">360° <i class="fas fa-globe-americas"></i> </a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="registration.html">Sign In</a></li>
-      <li><a href="contact.html"><i class="fas fa-share-alt"></i></a></li>
-      <li><a href="museum.html">museum</a></li>
+      <li><a href="index.php">home</a></li>
+      <li><a href="produktet.php">Products</a></li>
+      <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
+      <li><a href="about.php">about</a></li>
+      <li><a href="registration.php">Sign In</a></li>
+      <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
+      <li><a href="museum.php">museum</a></li>
     </ul>
   </div>
 </nav>
@@ -299,7 +299,7 @@
     <li><a href="">No Fear Act</a></li>
     <li><a href="">Privacy</a></li>
     <li><a href="">Office of Inspector General</a></li>
-    <li><a href="contact.html">Contact NASA</a></li>
+    <li><a href="contact.php">Contact NASA</a></li>
   </ul>
 </footer>
 
