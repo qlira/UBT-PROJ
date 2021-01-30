@@ -1,3 +1,11 @@
+<?php
+include('functions.php');
+global $UserLogin;
+if (!$UserLogin->isLoggedIn()) {
+  $_SESSION['msg'] = "You must log in first";
+  header('location: registration.php');
+}
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -32,23 +40,8 @@
 </head>
 <body>
 <div id="hero-image">
-  <nav>
-    <div class="logo">
-      <h1><a href="#hero-image"> NASA </a></h1>
-    </div>
+  <?php include ('components/navbar.php');?>
 
-    <div class="menu">
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="produktet.php">products</a></li>
-        <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
-        <li><a href="about.php">about</a></li>
-        <li><a href="registration.php">Sign In</a></li>
-        <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
-        <li><a href="museum.php">museum</a></li>
-      </ul>
-    </div>
-  </nav>
   <div class="hero-text">
     <h1>Welcome Home, Earthling</h1>
     <i class="fas fa-search"></i>
@@ -67,14 +60,7 @@
 
 </div>
 <div class="end">
-  <footer>
-    <ul>
-      <li><a href="#">No Fear Act</a></li>
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Office of Inspector General</a></li>
-      <li><a href="#">Contact NASA</a></li>
-    </ul>
-  </footer>
+  <?php include "components/footer.php";?>
 </div>
 
 

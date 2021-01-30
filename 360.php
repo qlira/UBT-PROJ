@@ -1,3 +1,11 @@
+<?php
+include('functions.php');
+global $UserLogin;
+if (!$UserLogin->isLoggedIn()) {
+  $_SESSION['msg'] = "You must log in first";
+  header('location: registration.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,29 +26,7 @@
 <body>
 <div class="presentation">
 
-  <nav>
-    <div class="logo">
-      <h1><a href="#hero-image"> NASA </a></h1>
-    </div>
-
-    <div class="menu">
-      <ul>
-        <li><a href="index.php">home</a></li>
-        <li><a href="produktet.php">products</a></li>
-        <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
-        <li><a href="about.php">about</a></li>
-        <li><a href="registration.php">Sign In</a></li>
-        <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
-        <li><a href="museum.php">museum</a></li>
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-
-
-<!--        <li><a href="testest.html">360° <i class="fas fa-globe-americas"></i> </a></li>-->
-
-
-      </ul>
-    </div>
-  </nav>
+  <?php  include ('components/navbar.php');?>
   <iframe allowfullscreen src="https://pchen66.github.io/Panolens/examples/littleplanet_image.html"
           style="width: 1916px; height: 99%"></iframe>
 </div>

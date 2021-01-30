@@ -1,3 +1,11 @@
+<?php
+include('functions.php');
+global $UserLogin;
+if (!$UserLogin->isLoggedIn()) {
+  $_SESSION['msg'] = "You must log in first";
+  header('location: registration.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +22,7 @@
 </head>
 
 <body>
-<nav>
-  <div class="logo">
-    <h1><a href="#hero-image"> NASA </a></h1>
-  </div>
-
-  <div class="menu">
-    <ul>
-      <li><a href="index.php">home</a></li>
-      <li><a href="produktet.php">products</a></li>
-      <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
-      <li><a href="about.php">about</a></li>
-      <li><a href="registration.php">Sign In</a></li>
-      <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
-      <li><a href="museum.php">museum</a></li>
-    </ul>
-  </div>
-</nav>
+<?php  include ('components/navbar.php');?>
 <div class="panel">
   <div class="pricing-plan">
     <h2 class="pricing-header"><i class="fas fa-child"></i> Kid</h2>
@@ -63,14 +55,7 @@
 <div id="visit">
   <h2>You're Welcome To Visit Us At <a href="https://www.google.com/maps/place/Patricia+Huffman+Smith+NASA+Museum/@31.3458606,-93.8448935,15z/data=!4m5!3m4!1s0x0:0xc08a91adaa9f2e1!8m2!3d31.3458606!4d-93.8448935" target="_blank"><i class="fas fa-map-marked-alt"></i></a></h2>
 </div>
-<footer>
-  <ul>
-    <li><a href="">No Fear Act</a></li>
-    <li><a href="">Privacy</a></li>
-    <li><a href="">Office of Inspector General</a></li>
-    <li><a href="contact.php">Contact NASA</a></li>
-  </ul>
-</footer>
+<?php  include ('components/footer.php');?>
 </body>
 
 </html>

@@ -14,7 +14,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 150px;
+  padding: 20px 0px 20px 150px;
   background-color: rgba(255, 0, 0, 0);
   width: 80%;
 }
@@ -178,9 +178,11 @@ footer{
   left: 0;
   width: 100%;
   text-align: center;
-  margin-top: 76%;
+  margin-top: 74%;
 }
-
+footer ul{
+  margin: 0;
+}
 footer ul li{
   display: inline-block;
   padding: 0px 30px;

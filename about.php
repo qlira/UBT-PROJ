@@ -1,3 +1,11 @@
+<?php
+include('functions.php');
+global $UserLogin;
+if (!$UserLogin->isLoggedIn()) {
+  $_SESSION['msg'] = "You must log in first";
+  header('location: registration.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,23 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 <body>
-<nav>
-  <div class="logo">
-    <h1><a href="#hero-image"> NASA </a></h1>
-  </div>
-
-  <div class="menu">
-    <ul>
-      <li><a href="index.php">home</a></li>
-      <li><a href="produktet.php">products</a></li>
-      <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
-      <li><a href="about.php">about</a></li>
-      <li><a href="registration.php">Sign In</a></li>
-      <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
-      <li><a href="museum.php">museum</a></li>
-    </ul>
-  </div>
-</nav>
+<?php  include ('components/navbar.php');?>
 <div class="somth">
   <div class="descp">
     <img src="img/nasaleader.jpg">
@@ -70,14 +62,7 @@
   </iframe>
 </div>
 </div>
-<footer>
-  <ul>
-    <li><a href="">No Fear Act</a></li>
-    <li><a href="">Privacy</a></li>
-    <li><a href="">Office of Inspector General</a></li>
-    <li><a href="contact.php">Contact NASA</a></li>
-  </ul>
-</footer>
+<?php include ('components/footer.php');?>
 <script src="js/about.js"></script>
 </body>
 </html>

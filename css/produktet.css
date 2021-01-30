@@ -14,7 +14,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 0, 0, 0);
-  width: 100%;
+  width: 90%; !important;
   top: 2%;
 }
 .logo {
@@ -80,6 +80,7 @@ nav h1{
   font-weight: 700;
   letter-spacing: 0.5px;
   padding-right: 8px;
+  text-transform: uppercase;
 }
 .text span{
   color: rgba(26,26,26,0.5);

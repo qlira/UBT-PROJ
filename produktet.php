@@ -1,3 +1,11 @@
+<?php
+include('functions.php');
+global $UserLogin;
+if (!$UserLogin->isLoggedIn()) {
+  $_SESSION['msg'] = "You must log in first";
+  header('location: registration.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,23 +28,7 @@
   <script type="text/javascript" src="js/lightslider.js"></script>
 </head>
 <body>
-<nav>
-  <div class="logo">
-    <h1><a href="#hero-image"> NASA </a></h1>
-  </div>
-
-  <div class="menu">
-    <ul>
-      <li><a href="index.php">home</a></li>
-      <li><a href="produktet.php">Products</a></li>
-      <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
-      <li><a href="about.php">about</a></li>
-      <li><a href="registration.php">Sign In</a></li>
-      <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
-      <li><a href="museum.php">museum</a></li>
-    </ul>
-  </div>
-</nav>
+<?php  include ('components/navbar.php');?>
 <section class="slider">
 <ul id="autoWidth" class="cs-hidden">
   <!--1---->
@@ -253,11 +245,11 @@
       <div class="detail-box">
         <!--type--->
         <div class="type">
-          <a href="#">Rabbed Cardigan</a>
-          <span>Noe Arrival</span>
+          <a href="#">apollo bottle</a>
+          <span>New Arrival</span>
         </div>
         <!--price--->
-        <a href="#" class="price">$23</a>
+        <a href="#" class="price">$7.95</a>
 
       </div>
     </div>
@@ -294,14 +286,7 @@
 </ul>
 </section>
 
-<footer>
-  <ul>
-    <li><a href="">No Fear Act</a></li>
-    <li><a href="">Privacy</a></li>
-    <li><a href="">Office of Inspector General</a></li>
-    <li><a href="contact.php">Contact NASA</a></li>
-  </ul>
-</footer>
+<?php  include ('components/footer.php');?>
 
 <script type="text/javascript" src="js/produktet.js"></script>
 </body>

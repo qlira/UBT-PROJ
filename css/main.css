@@ -24,6 +24,10 @@ nav {
   font-family: 'Ubuntu', sans-serif;
 }
 
+.menu{
+  padding-right: 7em;
+}
+
 .menu ul li {
   display: inline-block;
   padding: 0px 30px;
@@ -132,5 +136,14 @@ footer ul li a{
   text-decoration: none;
   color: white;
   font-family: 'Ubuntu', sans-serif;
+}
+.hero-image profile_info div {
+  display: inline-block;
+  margin: 5px;
+}
+.hero-image profile_info:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 

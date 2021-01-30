@@ -1,3 +1,4 @@
+<?php include ('functions.php');?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,23 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
 </head>
 <body>
-<nav>
-  <div class="logo">
-    <h1><a href="#hero-image"> NASA </a></h1>
-  </div>
-
-  <div class="menu">
-    <ul>
-      <li><a href="index.php">home</a></li>
-      <li><a href="produktet.php">products</a></li>
-      <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
-      <li><a href="about.php">about</a></li>
-      <li><a href="registration.php">Sign In</a></li>
-      <li><a href="contact.php"><i class="fas fa-share-alt"></i></a></li>
-      <li><a href="museum.php">museum</a></li>
-    </ul>
-  </div>
-</nav>
+<?php  include ('components/navbar.php');?>
 <!--contact-from-container-->
 <section id="contact">
   <!--social-->
@@ -66,14 +51,7 @@
       width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
       tabindex="0"></iframe>
   </div>
-  <footer>
-    <ul>
-      <li><a href="">No Fear Act</a></li>
-      <li><a href="">Privacy</a></li>
-      <li><a href="">Office of Inspector General</a></li>
-      <li><a href="contact.php">Contact NASA</a></li>
-    </ul>
-  </footer>
+  <?php  include ('components/footer.php');?>
 </section>
 </body>
 </html>
