@@ -44,8 +44,7 @@ if (!$UserLogin->isLoggedIn()) {
 
   <div class="hero-text">
     <h1>Welcome Home, Earthling</h1>
-    <i class="fas fa-search"></i>
-    <input type="text" placeholder="Search...">
+
   </div>
 </div>
 <div class="about">

@@ -1,27 +1,14 @@
 <?php
 include('../functions.php');
-global $UserLogin;
+include('includes/User.php');
+global $UserLogin, $user;
 if (!$UserLogin->isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
   header('location: registration.php');
 }
 
-if(isset($_POST['update-btn'])){
-  $conn = mysqli_connect("localhost", "root", "", "multi_login");
-  if($conn-> connect_error){
-    die("Connection failed". $conn-> connect_error);
-  }
-  $userid = mysqli_real_escape_string($conn,$_POST['id']);
-  $username = mysqli_real_escape_string($conn,$_POST['username']);
-  $email = mysqli_real_escape_string($conn,$_POST['email']);
-  $usertype = mysqli_real_escape_string($conn,$_POST['user_type']);
+$user->edit_user();
 
-  $sql = "UPDATE users SET username = '{$username}', email = '{$email}', user_type = '{$usertype}' WHERE id = '{$userid}'";
-
-    if(mysqli_query($conn,$sql)){
-      header("Location: users.php");
-    }
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,13 +36,7 @@ if(isset($_POST['update-btn'])){
   </div>
   <div class="right-area">
     <a id="add-btn" href="add-user.php">Add User</a>
-    <?php
-    if (!isLoggedIn()) {
-      echo '<li><a href="registration.php">Sign In</a></li>';
-    }else {
-      echo '<a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>';
-    }
-    ?>
+    <a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>
   </div>
 </header>
 <!--header end--->
@@ -78,13 +59,10 @@ if(isset($_POST['update-btn'])){
 
 <div class="edit-area">
   <?php
-  $conn = mysqli_connect("localhost", "root", "", "multi_login");
-  if($conn-> connect_error){
-    die("Connection failed". $conn-> connect_error);
-  }
+  global $db;
     $user_id = $_GET['id'];
     $sql = "SELECT * FROM users WHERE id = {$user_id}";
-    $result = mysqli_query($conn, $sql) or die("Query Failed.");
+    $result = $db->query($sql);
     if(mysqli_num_rows($result) > 0){
       while($row = mysqli_fetch_assoc($result)){
 

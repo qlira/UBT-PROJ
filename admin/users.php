@@ -32,13 +32,7 @@ if (!$UserLogin->isLoggedIn()) {
   </div>
   <div class="right-area">
     <a id="add-btn" href="add-user.php">Add User</a>
-<!--    --><?php
-//    if (!isLoggedIn()) {
-//      echo '<li><a href="registration.php">Sign In</a></li>';
-//    }else {
-//      echo '<a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>';
-//    }
-//    ?>
+    <a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>
   </div>
 </header>
 <!--header end--->

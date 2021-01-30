@@ -9,12 +9,7 @@ if (isset($_POST['register_btn'])) {
 }
 // connect to database
 class RegisterUser{
-// variable declaration
-//  public $username;
-//  public $email;
-//  public $password;
-//  public $confpass;
-// escape string
+
 
 
 
@@ -53,12 +48,13 @@ global $db;
       $query = "INSERT INTO users (username, email, user_type, password)
 					  VALUES('$username', '$email', 'user', '$password')";
       $db->query($query);
+    header('location: index.php');
+
 
 //      // get id of the created user
       $logged_in_user_id = $db->the_insert_id();
 
       $_SESSION['user'] = $this->get_user_by_id($logged_in_user_id); // put logged in user in session
-      header('location: index.php');
     }
   }
   public function get_user_by_id($user_id){

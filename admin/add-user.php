@@ -1,35 +1,13 @@
 <?php
 include('../functions.php');
-global $UserLogin;
+include('includes/User.php');
+global $UserLogin,$user;
 if (!$UserLogin->isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
   header('location: registration.php');
 }
+$user->add_user();
 
-if(isset($_POST['add-btn'])){
-  $conn = mysqli_connect("localhost", "root", "", "multi_login");
-  if($conn-> connect_error){
-    die("Connection failed". $conn-> connect_error);
-  }
-  $username = mysqli_real_escape_string($conn,$_POST['username']);
-  $email = mysqli_real_escape_string($conn,$_POST['email']);
-  $password = mysqli_real_escape_string($conn,$_POST['password']);
-  $confpass = mysqli_real_escape_string($conn,md5($_POST['confpass']));
-  $userType = mysqli_real_escape_string($conn,$_POST['user_type']);
-
-  $sql = "SELECT username FROM users WHERE username = {$username}";
-  $result = mysqli_query($conn, $sql) or die("Query Failed.");
-
-  if(mysqli_num_rows($result) > 0){
-    echo "<p style='color: red;text-align: center;margin: 10px 0;'>Username already Exists.</p>";
-  }else{
-    $sql1 = "INSERT INTO users (username, email, user_type, password)
-             VALUES ('{$username}', '{$email}', '{$userType}', '{$password}')";
-    if(mysqli_query($conn, $sql1)){
-      header("Location: users.php");
-    }
-  }
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,13 +35,7 @@ if(isset($_POST['add-btn'])){
   </div>
   <div class="right-area">
     <a id="add-btn" href="add-user.php">Add User</a>
-    <?php
-    if (!isLoggedIn()) {
-      echo '<li><a href="registration.php">Sign In</a></li>';
-    }else {
-      echo '<a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>';
-    }
-    ?>
+    <a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>
   </div>
 </header>
 <!--header end--->
