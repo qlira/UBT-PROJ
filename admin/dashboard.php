@@ -5,6 +5,9 @@ if (!$UserLogin->isLoggedIn()) {
   $_SESSION['msg'] = "You must log in first";
   header('location: ../registration.php');
 }
+if(!$UserLogin->isAdmin()){
+  header('location: ../index.php');
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,36 +22,10 @@ if (!$UserLogin->isLoggedIn()) {
 </head>
 <body>
 
-<input type="checkbox" id="check">
-<!--header start--->
-<header>
-  <label for="check">
-    <i class="fas fa-bars" id="sidebar_btn"></i>
-  </label>
-  <div class="left-area">
-    <h3>Nasa<span> Admin</span></h3>
-  </div>
-  <div class="right-area">
-    <a id="add-btn" href="add-user.php">Add User</a>
-    <a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>
-  </div>
-</header>
+<?php include("components/header.php");?>
 <!--header end--->
 <!--slidebar start--->
-<div class="sidebar">
-  <center>
-    <img src="../img/user_profile.png" class="profile_image">
-    <?php
-      echo '<h4>'. $_SESSION['user']['username'] . '</h4>'
-    ?>
-<!--    <h4>Jessica</h4>-->
-  </center>
-  <a href="users.php"><i class="fas fa-users"></i><span>Users</span></a>
-  <a href="#"><i class="fas fa-users"></i><span>Products</span></a>
-  <a href="#"><i class="fas fa-share-alt"></i><span>Orders</span></a>
-  <a href="#"><i class="fas fa-share-alt"></i><span>Contacts</span></a>
-
-</div>
+<?php include("components/sidenavbar.php"); ?>
 <!--slidebar end--->
 
 <!--<div class="content"></div>-->

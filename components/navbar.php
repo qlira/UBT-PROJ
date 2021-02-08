@@ -5,7 +5,18 @@
 
   <div class="menu">
     <ul>
-      <li><a href="index.php">home</a></li>
+      <?php
+        global $UserLogin;
+        if($UserLogin->isLoggedIn() && $_SESSION['user']['user_type'] == 'user'){
+          echo '<li><a href="index.php">home</a></li>';
+        }else if($UserLogin->isLoggedIn() && $_SESSION['user']['user_type'] == 'admin'){
+          echo '<li><a href="admin/dashboard.php">dashboard</a>';
+        }
+        else{
+          echo '<li><a href="index.php">home</a></li>';
+        }
+      ?>
+<!--      <li><a href="index.php">home</a></li>-->
       <li><a href="produktet.php">products</a></li>
       <li><a href="360.php">360° <i class="fas fa-globe-americas"></i> </a></li>
       <li><a href="about.php">about</a></li>

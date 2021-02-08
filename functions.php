@@ -94,6 +94,14 @@ class LoginUser
       return false;
     }
   }
+  function isAdmin()
+  {
+    if ($_SESSION['user']['user_type'] =='admin') {
+      return true;
+    } else {
+      return false;
+    }
+  }
   public function log_out()
   {
     if (isset($_GET['logout'])) {

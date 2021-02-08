@@ -37,7 +37,10 @@
     <!--inputs------->
     <div class="c-inputs">
       <input type="text" placeholder="Full Name"/>
-      <input type="email" placeholder="Example@gmail.com"/>
+      <input type="email" value="<?php
+      global $UserLogin;
+      echo $UserLogin->isLoggedIn()? $_SESSION['user']['email']:'';
+      ?>" placeholder="Example@gmail.com"/>
       <textarea name="message" placeholder="Write Message"></textarea>
       <!--submit-btn---------->
       <button>SEND</button>

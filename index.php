@@ -2,7 +2,6 @@
 include('functions.php');
 global $UserLogin;
 if (!$UserLogin->isLoggedIn()) {
-  $_SESSION['msg'] = "You must log in first";
   header('location: registration.php');
 }
 ?>
