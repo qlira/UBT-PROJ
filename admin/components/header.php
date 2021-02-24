@@ -8,7 +8,8 @@
     <h3>Nasa<span> Admin</span></h3>
   </div>
   <div class="right-area">
-    <a id="add-btn" href="add-user.php">Add User</a>
+    <a id="add-btn" href="add-user.php" style="margin-right:245px;">Add User</a>
+    <a id="add-btn" href="add-article.php">Add Product</a>
     <a id="logout_btn" href="../index.php?logout=1" style="cursor: pointer;">Logout</a>
   </div>
 </header>
